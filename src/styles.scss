@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('bootstrap');
+
+
+@font-face {
+    font-family: geo;
+    src: url(./app/fonts/bpg_extrasquare_mtavruli.ttf);
+}
+
+@font-face {
+    font-family: command_prompt;
+    src: url(./app/fonts/windows_command_prompt.ttf);
+}
+
+@font-face {
+    font-family: arcade_classic;
+    src: url(./app/fonts/ARCADECLASSIC.TTF);
+}
+
+@font-face {
+    font-family: lari;
+    src: url(./app/fonts/laritethrilogo.ttf);
+}
+
+@font-face {
+    font-family: fixedsys;
+    src: url(./app/fonts/fixedsys_excelsior.ttf);
+}
+
+@font-face {
+    font-family: xelnaweri;
+    src: url(./app/fonts/mt_mchedlidze_helnatceri1.ttf);
+}

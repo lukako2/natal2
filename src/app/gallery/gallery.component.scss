@@ -1,0 +1,117 @@
+.container-fluid {
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
+  h1 {
+    font-size: 10vw;
+    font-family: fixedsys;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.img-container {
+  background-color: rgb(187, 151, 157);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  img {
+    width: 30vw;
+    padding: 2rem;
+    cursor: pointer;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+}
+
+.overlay.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expanded-image {
+  position: absolute;
+  width: 30vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.folders {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.folder {
+  cursor: pointer;
+  margin: 2rem;
+  // width: 20rem;
+  // background-color: rgba(128, 128, 128, 0.575);
+
+  .thumbnail {
+    //   display: flex;
+    //   flex-direction: row;
+
+    img {
+      width: 15vw;
+      object-fit: fill;
+      padding: 0;
+    }
+  }
+
+  p {
+    font-family: xelnaweri;
+  }
+}
+
+@media screen and (max-width: 739px) {
+  .container-fluid {
+    h1 {
+      font-size: 12vw;
+    }
+  }
+  .folders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .folder {
+    margin: 0.5rem;
+    .thumbnail {
+      img {
+        width: 35vw !important;
+        object-fit: fill;
+        padding: 0;
+      }
+    }
+    p {
+      font-size: 7vw;
+    }
+  }
+
+  .img-container {
+    img {
+      width: 45vw;
+      padding: 0.1rem;
+      cursor: pointer;
+    }
+  }
+}

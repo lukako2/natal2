@@ -1,0 +1,78 @@
+<div class="container-fluid">
+  <h1>
+    უცხ<span style="font-size: 7vw; -webkit-text-stroke: 1px black">∟</span
+    >პლანეტელები
+  </h1>
+  <div class="folders">
+    <div class="natal folder" (click)="showContainer('natal')">
+      <div class="thumbnail">
+        <img src="https://i.ibb.co/Fg2j5rh/folder-Opened-3.png" alt="" />
+        <!-- <img [src]="randomNumber" alt="" />
+          <img [src]="randomNumber2" alt="" /> -->
+      </div>
+      <p>ნატალი</p>
+    </div>
+
+    <div class="folder luk" (click)="showContainer('luk')">
+      <div class="thumbnail">
+        <img src="https://i.ibb.co/tZ5MmZ4/folder-Opened-2.png" alt="" />
+        <!-- <img [src]="randomNumber3" alt="" />
+          <img [src]="randomNumber4" alt="" /> -->
+      </div>
+      <p>ლუკა</p>
+    </div>
+
+    <div class="together folder" (click)="showContainer('together')">
+      <div class="thumbnail">
+        <img src="https://i.ibb.co/z2yQqPX/folder-Opened-4.png" alt="" />
+        <!-- <img [src]="randomNumber5" alt="" />
+          <img [src]="randomNumber6" alt="" /> -->
+      </div>
+      <p>ნატლ ლუკ</p>
+    </div>
+  </div>
+
+  <p style="font-family: arcade_classic; justify-self: center; " (click)="hideImages = !hideImages">
+    {{ hideImages ? 'Show images' : 'Hide images' }}
+  </p>
+  
+  <div class="img-container natala" *ngIf="activeContainer === 'natal' && !hideImages">
+    <img
+      *ngFor="let img of natlImgList"
+      [src]="img"
+      alt=""
+      (click)="imgResize(img)"
+      
+    />
+  </div>
+  
+  <div class="img-container lukaka" *ngIf="activeContainer === 'luk' && !hideImages">
+    <img
+      *ngFor="let img of lukImgList"
+      [src]="img"
+      alt=""
+      (click)="imgResize(img)"
+      
+    />
+  </div>
+  
+  <div class="img-container togetherr" *ngIf="activeContainer === 'together' && !hideImages">
+    <img
+      *ngFor="let img of togetherImgList"
+      [src]="img"
+      alt=""
+      (click)="imgResize(img)"
+      
+    />
+  </div>
+  
+  
+
+  <div
+    class="overlay"
+    [ngClass]="{ active: isImageExpanded }"
+    (click)="closeImage()"
+  >
+    <img [src]="expandedImageUrl" alt="" class="expanded-image" />
+  </div>
+</div>
